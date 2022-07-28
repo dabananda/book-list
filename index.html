@@ -4,45 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://res.cloudinary.com/divcukylp/image/upload/v1647423842/images/favicon-dabananda-mitra_byl6xn.png"
+      type="image/x-icon"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <!-- Bootstrap CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="./styles.css" />
     <title>Book List | Dabananda Mitra</title>
   </head>
-  <body>
-    <div class="container">
-      <h2>Book List</h2>
-      <hr />
-      <form id="form">
-        <div class="input-box">
-          <label>Title</label>
-          <input type="text" id="title" />
+  <body class="bg-light">
+    <div class="container main mb-4">
+      <h2 class="text-center py-2">Book List</h2>
+      <form class="box px-4 py-5" id="form">
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            type="text"
+            id="title"
+            placeholder="Title"
+          />
+          <label for="floatingInput">Title</label>
         </div>
-        <div class="input-box">
-          <label>Author</label>
-          <input type="text" id="author" />
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            type="text"
+            id="author"
+            placeholder="Author"
+          />
+          <label for="floatingInput">Author</label>
         </div>
-        <div class="input-box">
-          <label>ISBN</label>
-          <input type="text" id="isbn" />
+        <div class="form-floating mb-3">
+          <input
+            class="form-control"
+            type="text"
+            id="isbn"
+            placeholder="ISBN"
+          />
+          <label for="floatingInput">ISBN</label>
         </div>
-        <button type="submit" id="btn">Add Book</button>
+        <button class="btn btn-primary" type="submit" id="btn">Add Book</button>
       </form>
-      <hr />
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>ISBN</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody id="book-list"></tbody>
-      </table>
+      <div class="box mt-4 box p-4">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">ISBN</th>
+              <th scope="col">Remove</th>
+            </tr>
+          </thead>
+          <tbody id="book-list"></tbody>
+        </table>
+      </div>
     </div>
-    <footer>
-      <hr />
-      <small>Copyright &copy; 2022 | Dabananda Mitra</small>
+    <footer class="mx-auto text-center">
+      <small
+        >Copyright &copy; 2022 |
+        <a href="https://dmitra.netlify.app/" target="_blank"
+          >Dabanand Mitra</a
+        ></small
+      >
     </footer>
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- JavaScript -->
     <script src="./main.js"></script>
   </body>

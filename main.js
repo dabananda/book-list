@@ -14,10 +14,12 @@ class UI {
     const bookList = document.querySelector('#book-list');
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td>${book.title}</td>
+      <td scope="row">${book.title}</td>
       <td>${book.author}</td>
       <td>${book.isbn}</td>
-      <td><a href="#">X</a></td>
+      <td>
+        <a class="btn btn-danger" href="#">X</a>
+      </td>
     `;
     bookList.appendChild(tr);
   }
@@ -35,10 +37,12 @@ class UI {
       // Removing book from the book list
       book.parentElement.parentElement.remove();
       // passing alert to showAlert() function
-      UI.showAlert('The book is deleted from the list!', 'warning');
+      UI.showAlert('The book is deleted from the list!', 'alert-danger');
 
       // passing book isbn number to remove form localStoreage
-      Store.removeBookFromLocalStorage(book.parentElement.previousElementSibling.textContent.trim())
+      Store.removeBookFromLocalStorage(
+        book.parentElement.previousElementSibling.textContent.trim()
+      );
     }
   }
 
@@ -111,7 +115,7 @@ function newBook(e) {
 
   // validating book details
   if (title === '' || author === '' || isbn === '') {
-    UI.showAlert('Please fill all the input fields!', 'error');
+    UI.showAlert('Please fill all the input fields!', 'alert-warning');
   } else {
     // creating book details
     const book = new Book(title, author, isbn);
@@ -119,7 +123,7 @@ function newBook(e) {
     UI.addToBookList(book);
 
     // Calling alert for success
-    UI.showAlert('Book added successfully 😁', 'success');
+    UI.showAlert('Book added successfully 😁', 'alert-success');
     // calling function of clearing book details input fields
     UI.clearInputs();
 
